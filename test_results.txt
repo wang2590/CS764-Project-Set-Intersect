@@ -1,0 +1,10 @@
+Test Output Table   | S = pow(N, 1)        |    pow(N, 1.3)       |    pow(N, 1.6)          |   pow(N, 2)  |
+--------------------------------------------------------------------------------------------------------------------
+                    | space|threshold|time || space|threshold|time || space|threshold|time || space|threshold|time
+access = 10         | 27421,165,9ms         |
+access = 100        | 27421,165,64ms        |
+access = 500        | 27421,165,299ms       |
+access = 1000       | 27421,165,592ms       |
+
+number of sets : 27421
+database size = 27421

@@ -1,10 +1,24 @@
 Test Output Table   | S = pow(N, 1)        |    pow(N, 1.3)       |    pow(N, 1.6)          |   pow(N, 2)  |
 --------------------------------------------------------------------------------------------------------------------
                     | space|threshold|time || space|threshold|time || space|threshold|time || space|threshold|time
-access = 10         | 27421,165,9ms         |
-access = 100        | 27421,165,64ms        |
-access = 500        | 27421,165,299ms       |
-access = 1000       | 27421,165,592ms       |
+access = 10         | 27421,165,9ms         | 588177,35,9ms         | 12616336,7,7ms        | 751911241,1,8ms
+access = 100        | 27421,165,64ms        | 588177,35,67ms        | 12616336,7,61ms       | 751911241,1,67ms
+access = 500        | 27421,165,299ms       | 588177,35,312ms       | 12616336,7,283ms      | 751911241,1,318ms
+access = 1000       | 27421,165,592ms       | 588177,35,618ms       | 12616336,7,569ms      | 751911241,1,619ms
 
 number of sets : 27421
 database size = 27421
+
+Dataset size = 4.5MB
+Dataset partial sample(egonet):
+...
+24: 80 209 149 101 42
+25: 146 215 10 153 8 20 221 31 140 126 12 205 182 97 236 167 230 162 37
+26: 
+27: 216 189 52
+28: 146 201 93 204 60 122 95 91 141 235 132 88 166 6 8 
+29: 
+30: 87 13 98
+...
+
+Running on a VM has 126GB of memory, w/ x86_64 Intel(R) Xeon(R) CPU(40) E5-2660 v3 @ 2.60GHz

@@ -14,17 +14,21 @@
 #include <cmath>
 using namespace std;
 
-std::unordered_map<int, unordered_set<int>> records;
-std::unordered_map<int, std::unordered_map<int, int>> M; // materialization
-const int S = 1; // storage
-const int N = 20; // database size
+std::unordered_map<int, unordered_set<int>> records; // database
+std::unordered_map<int, std::unordered_map<int, int>> M; // HM
+
+const int NN = 20; 
+int S = 0; // storage
+int N = 0; // database size
 
 void testdata_map() {
   map<int, unordered_set<int>> temp_map; // set i -> [elements j]
-  for(int i = 0 ; i < N; i++) {
-    for(int j = 0 ; j < N; j++) {
-      if (rand() % 4  == 0)
+  for(int i = 0 ; i < NN; i++) {
+    for(int j = 0 ; j < NN; j++) {
+      if (rand() % 4  == 0 && j != i) {
         temp_map[i].insert(j);
+        N += 1;
+      }
     }
     records[i] = temp_map[i];
   }
@@ -53,9 +57,11 @@ int join(int u, int v) {
   return 0;
 }
 
+
+
 // preprocessing phase
-void materialization() {
-  int threshold = floor(records.size() / sqrt(S));  // degree threshold
+void HM() {
+  int threshold = floor(N / sqrt(S));  // degree threshold
   std::vector<int> heavyhitter;
 
   for (int i = 0; i < records.size(); i++) { 
@@ -64,17 +70,12 @@ void materialization() {
     }
   }
 
-  int H = heavyhitter.size();
-  // k-Set Disjointness, k = 2, 4, 8
-  for (int i = 0; i < H; ++i) {
-        for (int j = 0; j < H; ++j) { // k = 2
-          int u = heavyhitter[i];
-          int v = heavyhitter[j];
-
-          int result = join(u, v);
-          M[u][v] =  result;
-          M[v][u] =  result;
-        } 
+  for (int u : heavyhitter) {
+    for (int v : heavyhitter) {
+      int result = join(u, v);
+      M[u][v] =  result;
+      M[v][u] =  result;
+    } 
   }
   return;
 }
@@ -91,28 +92,27 @@ int access(int u, int v) {
   if (du * dv == 0) 
     return 0;
 
-  if (M.find(u) != M.end()) {
-    if (M[u].find(v) != M[u].end()) {
-      cout << "stored" << endl;
-      return M[u][v];
-    }
+  if (M.find(u) != M.end() && M[u].find(v) != M[u].end()) {
+    return M[u][v];
   }
+
   return join(u, v);
 }
 
 
 int main() {
-  // srand(time(NULL));
-  // timeval starting;
- 
   // build datasets
   testdata_map();
-  cout << " number of sets : " << records.size() << endl;
+  cout << "number of sets : " << records.size() << endl;
+  cout << "database size = " << N << endl;
+  
+  S = floor(pow(N, 1.5));
+  cout << "space usage = " << S << endl;
+  cout << "threshold = " << floor(N / sqrt(S)) << endl;
 
-  // gettimeofday(&starting, NULL);
   // print datasets
   for (int i = 0; i < records.size(); i++) { 
-    cout << "the set " << i << " contains: ";
+    cout << "set " << i << " contains: ";
     unordered_set<int> :: iterator itr;
     for (itr = records[i].begin(); itr != records[i].end(); itr++)
         cout << (*itr) << " ";
@@ -120,22 +120,16 @@ int main() {
   }
 
   // preprocessing phase
-  materialization();
+  HM();
 
-  for (int i = 0; i < M.size(); i++) {
-    for(int j = 0; j < M[i].size(); j++) {
+  for (auto & [i, value]: M) {
+    for(auto & [j, v]: value) {
       cout << i << ", " << j << ": " << M[i][j] << endl;
     }
   }
 
   // online phase
-  std::cout << "access request results: " << access(0, 1) << std::endl;
-
-  // inserts
-  // umap[1] = 1;
- 
-  // traverse map
-  // for (auto&x : umap)
-  //   std::cout << x.first << " " << x.second << std::endl;
+  std::cout << "access request results: " << access(0, 0) << std::endl;
+  std::cout << "access request results: " << access(17, 18) << std::endl;
 }
 

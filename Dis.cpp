@@ -65,20 +65,35 @@ int join(int u, int v) {
   return 0;
 }
 
+int betterJoin(int u, int v) {
+  std::vector<int> intersection;
+  std::set_intersection(records[u].begin(), records[u].end(),
+                        records[v].begin(), records[v].end(),
+                        std::back_inserter(intersection));
+
+  return intersection.size() > 0 ? 1 : 0;
+}
+
 // preprocessing phase
 void HM() {
   int threshold = floor(N / sqrt(S));  // degree threshold
   std::vector<int> heavyhitter;
 
-  for (int i = 0; i < records.size(); i++) {
-    if (records[i].size() > threshold) {
-      heavyhitter.push_back(i);  // heavy-hitters
+  // for (int i = 0; i < records.size(); i++) {
+  //   if (records[i].size() > threshold) {
+  //     heavyhitter.push_back(i);  // heavy-hitters
+  //   }
+  // }
+
+  for (const auto& [key, value] : records) {
+    if (value.size() > threshold) {
+      heavyhitter.push_back(key);  // heavy-hitters
     }
   }
 
   for (int u : heavyhitter) {
     for (int v : heavyhitter) {
-      int result = join(u, v);
+      int result = betterJoin(u, v);
       M[u][v] = result;
       M[v][u] = result;
     }
@@ -169,7 +184,7 @@ int main() {
   cout << "number of sets : " << records.size() << endl;
   cout << "database size = " << N << endl;
 
-  S = floor(pow(N, 1.3));
+  S = floor(pow(N, 2));
   cout << "space usage = " << S << endl;
   cout << "threshold = " << floor(N / sqrt(S)) << endl;
 
@@ -197,6 +212,7 @@ int main() {
   // std::cout << "access request results: " << access(17, 18) << std::endl;
 
   // // quick test
+  std::cout << "START TEST" << std::endl;
   std::vector<int> vec = {10, 100, 500, 1000};
   for (int element : vec) {
     // Create a uniform random number generator

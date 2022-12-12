@@ -182,13 +182,19 @@ int dataset() {
       // }
 
       // assign to global 'records' database
-      records = data;
-
-      for (const auto& [key, value] : records) {
-        N += records[key].size();
-      }
+      records.insert(data.begin(), data.end());
     }
   }
+
+  int maxx = 0;
+  int minn = 0;
+  for (const auto& [key, value] : records) {
+    N += records[key].size();
+    if (records[key].size() > maxx) maxx = records[key].size();
+    if (records[key].size() < minn) minn = records[key].size();
+  }
+  int avg = N / records.size();
+  cout << "avg: " << avg << " max: " << maxx << " min: " << minn << endl;
   return 0;
 }
 
@@ -199,7 +205,7 @@ int main() {
   cout << "number of sets : " << records.size() << endl;
   cout << "database size = " << N << endl;
 
-  S = floor(pow(N, 2));
+  S = floor(pow(N, 0));  // 0,1,1.5,2
   cout << "space usage = " << S << endl;
   cout << "threshold = " << floor(N / sqrt(S)) << endl;
 

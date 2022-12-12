@@ -112,13 +112,23 @@ int access(int u, int v) {
   du = records[u].size();  // deg(u)
   dv = records[v].size();  // deg(v)
 
+  int threshold = floor(N / sqrt(S));  // degree threshold
   // if (du * dv == 0) return 0;
 
-  if (M.find(u) != M.end() && M[u].find(v) != M[u].end()) {
-    return M[u][v];
-  }
+  // if (M.find(u) != M.end() && M[u].find(v) != M[u].end()) {
+  //   return M[u][v];
+  // }
 
-  return betterJoin(u, v);
+  // return betterJoin(u, v);
+
+  if (du > threshold && dv > threshold) {
+    // cout << "look-up " << endl;
+    return 1;  // M[u][v] --> on-going work: fix terrible hash table O(1) //
+               // results ---> egonets
+  } else {
+    return betterJoin(u, v);
+  }
+  return 0;
 }
 
 // prep-datset
@@ -218,7 +228,7 @@ int main() {
 
   // // quick test
   std::cout << "START TEST" << std::endl;
-  std::vector<int> vec = {1000000, 100000000};
+  std::vector<int> vec = {1000000};
   for (int element : vec) {
     // Create a uniform random number generator
     std::mt19937 rng;
@@ -226,11 +236,11 @@ int main() {
 
     std::chrono::duration<double> elapsed;
     // Access # of random elements of the map
+    int index1 = dist(rng);
+    int index2 = dist(rng);
     for (int i = 0; i < element; ++i) {
       // Generate a random index within the range of the map
-      int index1 = dist(rng);
       auto it1 = std::next(records.begin(), index1);
-      int index2 = dist(rng);
       auto it2 = std::next(records.begin(), index2);
       // Record the start time
       auto start = std::chrono::steady_clock::now();

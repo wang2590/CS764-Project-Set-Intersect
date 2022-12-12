@@ -7,8 +7,11 @@ access = 500        | 1,41585310,300ms      | 41585310,6448,300ms   | 588177,35,
 access = 1000       | 1,41585310,597ms      | 41585310,6448,598ms   | 588177,35,568ms       | 12616336,7,559ms      | 751911241,1,619ms    | 37552.301ms
 
                     | S = pow(N, 0)          | S = pow(N, 1)        |    pow(N, 1.5)         |    pow(N, 2)
-                    || space|threshold|time || space|threshold|time || space|threshold|time || space|threshold|time||
+(return M[u][v])    || space|threshold|time || space|threshold|time || space|threshold|time || space|threshold|time||
 access = 1000000    |1,41585310,7051ms       | 41585310,6448,7378ms  | 268169828931,80,7362ms|1729338007796100,1,2110ms
+
+(return 1,bad hash) || space|threshold|time || space|threshold|time || space|threshold|time || space|threshold|time||
+access = 1000000    |1,41585310,1542ms       | 41585310,6448,1490ms  | 268169828931,80,1481ms|1729338007796100,1,431ms
 
 number of sets : 27421
 database size = 41585310

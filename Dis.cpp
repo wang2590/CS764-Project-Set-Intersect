@@ -205,7 +205,7 @@ int main() {
   cout << "number of sets : " << records.size() << endl;
   cout << "database size = " << N << endl;
 
-  S = floor(pow(N, 0));  // 0,1,1.5,2
+  S = floor(pow(N, 1.8));  // 0,1,1.5,1.8,2
   cout << "space usage = " << S << endl;
   cout << "threshold = " << floor(N / sqrt(S)) << endl;
 

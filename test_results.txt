@@ -9,12 +9,14 @@ access = 1000       | 1,41585310,597ms      | 41585310,6448,598ms   | 588177,35,
                     | S = pow(N, 0)          | S = pow(N, 1)        |    pow(N, 1.5)         |    pow(N, 2)
 (return M[u][v])    || space|threshold|time || space|threshold|time || space|threshold|time || space|threshold|time||
 access = 1000000    |1,41585310,7051ms       | 41585310,6448,7378ms  | 268169828931,80,7362ms|1729338007796100,1,2110ms
-
-(return 1,bad hash) || space|threshold|time || space|threshold|time || space|threshold|time || space|threshold|time||
-access = 1000000    |1,41585310,1542ms       | 41585310,6448,1490ms  | 268169828931,80,1481ms|1729338007796100,1,431ms
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Test Output Table   | S = pow(N, 0)          | S = pow(N, 1)        |    pow(N, 1.5)         | pow(N, 1.8)           | pow(N, 2)  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+(avoid hash)        || space|threshold|time || space|threshold|time || space|threshold|time || space|threshold|time  || space|threshold|time
+access = 1000000    |1,741053,1584ms        | 741053,860,1580ms    | 637931290,29,1532ms     |36789906626,3,378ms     | 549159548809,1,429ms
 
 number of sets : 27421
-database size = 41585310
+database size = 741053
 
 Dataset size = 4.5MB
 Dataset partial sample(egonet):

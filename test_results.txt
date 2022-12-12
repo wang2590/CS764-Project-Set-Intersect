@@ -1,13 +1,17 @@
-Test Output Table   | S = pow(N, 1)        |    pow(N, 1.3)       |    pow(N, 1.6)          |   pow(N, 2)          |    postgres.            |       
-----------------------------------------------------------------------------------------------------------------------------------------------
-                    | space|threshold|time || space|threshold|time || space|threshold|time || space|threshold|time | time
-access = 10         | 27421,165,9ms         | 588177,35,9ms         | 12616336,7,7ms        | 751911241,1,8ms      | 396.376ms
-access = 100        | 27421,165,64ms        | 588177,35,67ms        | 12616336,7,61ms       | 751911241,1,67ms     | 3857.457ms
-access = 500        | 27421,165,299ms       | 588177,35,312ms       | 12616336,7,283ms      | 751911241,1,318ms    | 18947.173ms
-access = 1000       | 27421,165,592ms       | 588177,35,618ms       | 12616336,7,569ms      | 751911241,1,619ms    | 37552.301ms
+Test Output Table   | S = pow(N, 0)          | S = pow(N, 1)        |    pow(N, 1.3)         |    pow(N, 1.6)      |   pow(N, 2)          |    postgres.   |       
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+                    || space|threshold|time || space|threshold|time || space|threshold|time || space|threshold|time|| space|threshold|time | time
+access = 10         | 1,41585310,7ms        | 41585310,6448,7ms     | 588177,35,7ms         | 12616336,7,7ms        | 751911241,1,8ms      | 396.376ms
+access = 100        | 1,41585310,64ms       | 41585310,6448,64ms    | 588177,35,63ms        | 12616336,7,61ms       | 751911241,1,67ms     | 3857.457ms
+access = 500        | 1,41585310,300ms      | 41585310,6448,300ms   | 588177,35,292ms       | 12616336,7,283ms      | 751911241,1,318ms    | 18947.173ms
+access = 1000       | 1,41585310,597ms      | 41585310,6448,598ms   | 588177,35,568ms       | 12616336,7,559ms      | 751911241,1,619ms    | 37552.301ms
+
+                    | S = pow(N, 0)          | S = pow(N, 1)        |    pow(N, 1.5)         |    pow(N, 2)
+                    || space|threshold|time || space|threshold|time || space|threshold|time || space|threshold|time||
+access = 1000000    |1,41585310,7051ms       | 41585310,6448,7378ms  | 268169828931,80,7362ms|1729338007796100,1,2110ms
 
 number of sets : 27421
-database size = 27421
+database size = 41585310
 
 Dataset size = 4.5MB
 Dataset partial sample(egonet):

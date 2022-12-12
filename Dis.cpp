@@ -27,8 +27,8 @@ std::unordered_map<int, unordered_set<int>> records;      // database
 std::unordered_map<int, std::unordered_map<int, int>> M;  // HM
 
 const int NN = 20;
-int S = 0;  // storage
-int N = 0;  // database size
+uint64_t S = 0;  // storage
+uint64_t N = 0;  // database size
 
 void testdata_map() {
   map<int, unordered_set<int>> temp_map;  // set i -> [elements j]
@@ -93,9 +93,11 @@ void HM() {
 
   for (int u : heavyhitter) {
     for (int v : heavyhitter) {
-      int result = betterJoin(u, v);
-      M[u][v] = result;
-      M[v][u] = result;
+      if (u <= v) {
+        int result = betterJoin(u, v);
+        M[u][v] = result;
+        M[v][u] = result;
+      }
     }
   }
   return;
@@ -110,13 +112,13 @@ int access(int u, int v) {
   du = records[u].size();  // deg(u)
   dv = records[v].size();  // deg(v)
 
-  if (du * dv == 0) return 0;
+  // if (du * dv == 0) return 0;
 
   if (M.find(u) != M.end() && M[u].find(v) != M[u].end()) {
     return M[u][v];
   }
 
-  return join(u, v);
+  return betterJoin(u, v);
 }
 
 // prep-datset
@@ -171,7 +173,10 @@ int dataset() {
 
       // assign to global 'records' database
       records = data;
-      N = data.size();
+
+      for (const auto& [key, value] : records) {
+        N += records[key].size();
+      }
     }
   }
   return 0;
@@ -213,15 +218,13 @@ int main() {
 
   // // quick test
   std::cout << "START TEST" << std::endl;
-  std::vector<int> vec = {10, 100, 500, 1000};
+  std::vector<int> vec = {1000000, 100000000};
   for (int element : vec) {
     // Create a uniform random number generator
     std::mt19937 rng;
     std::uniform_int_distribution<int> dist(0, records.size() - 1);
 
-    // Record the start time
-    auto start = std::chrono::steady_clock::now();
-
+    std::chrono::duration<double> elapsed;
     // Access # of random elements of the map
     for (int i = 0; i < element; ++i) {
       // Generate a random index within the range of the map
@@ -229,15 +232,17 @@ int main() {
       auto it1 = std::next(records.begin(), index1);
       int index2 = dist(rng);
       auto it2 = std::next(records.begin(), index2);
+      // Record the start time
+      auto start = std::chrono::steady_clock::now();
       access(it1->first, it2->first);
+      // Record the end time
+      auto end = std::chrono::steady_clock::now();
+      // Compute the elapsed time
+      elapsed += end - start;
     }
-    // Record the end time
-    auto end = std::chrono::steady_clock::now();
-    // Compute the elapsed time
-    auto elapsed = end - start;
     // Print the elapsed time to the standard output
-    std::cout << "Number of Access: " << element
-              << " Elapsed time: " << elapsed.count() << " ns" << std::endl;
+    // std::cout << "Number of Access: " << element
+    //           << " Elapsed time: " << elapsed.count() << " ns" << std::endl;
     std::cout << "Number of Access: " << element << " Elapsed time: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(elapsed)
                      .count()

@@ -1,0 +1,148 @@
+Intersection
+* Postgres:
+access= 1000 , time= 37909.832
+access= 2000 , time= 78583.84566666662
+
+* pow(N, 1.0)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 741053
+threshold = 1
+START TEST
+Number of Access: 1000 Elapsed time: 7937ms
+Number of Access: 2000 Elapsed time: 22362ms
+
+* pow(N, 1.1)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 2863084
+threshold = 3
+START TEST
+Number of Access: 1000 Elapsed time: 7222ms
+Number of Access: 2000 Elapsed time: 20333ms
+
+* pow(N, 1.2)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 11061629
+threshold = 14
+START TEST
+Number of Access: 1000 Elapsed time: 4459ms
+Number of Access: 2000 Elapsed time: 12562ms
+
+* pow(N, 1.3)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 42737001
+threshold = 57
+START TEST
+Number of Access: 1000 Elapsed time: 1108ms
+Number of Access: 2000 Elapsed time: 3120ms
+
+* pow(N, 1.4)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 165115931
+threshold = 222
+START TEST
+Number of Access: 1000 Elapsed time: 8ms
+Number of Access: 2000 Elapsed time: 24ms
+
+* pow(N, 1.5)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 637931290
+threshold = 860
+START TEST
+Number of Access: 1000 Elapsed time: 1ms
+Number of Access: 2000 Elapsed time: 3ms
+
+
+Set Disjoint
+* Postgres
+access= 1000 , time= 38965.22733333334
+access= 2000 , time= 76047.63433333328
+
+* pow(N, 1)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+exponent = 1
+space usage = 741053
+threshold = 860
+FINISH MATERIALIZATION
+START TEST
+START TEST
+Number of Access: 1000 Elapsed time: 4ms
+Number of Access: 2000 Elapsed time: 13ms
+
+* pow(N, 1.1)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+exponent = 1.1
+space usage = 2863084
+threshold = 437
+FINISH MATERIALIZATION
+START TEST
+START TEST
+Number of Access: 1000 Elapsed time: 4ms
+Number of Access: 2000 Elapsed time: 13ms
+
+* pow(N, 1.2)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+exponent = 1.2
+space usage = 11061629
+threshold = 222
+FINISH MATERIALIZATION
+START TEST
+START TEST
+Number of Access: 1000 Elapsed time: 4ms
+Number of Access: 2000 Elapsed time: 13ms
+
+* pow(N, 1.3)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+exponent = 1.3
+space usage = 42737001
+threshold = 113
+FINISH MATERIALIZATION
+START TEST
+START TEST
+Number of Access: 1000 Elapsed time: 4ms
+Number of Access: 2000 Elapsed time: 13ms
+
+* pow(N, 1.4)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+exponent = 1.4
+space usage = 165115931
+threshold = 57
+FINISH MATERIALIZATION
+START TEST
+START TEST
+Number of Access: 1000 Elapsed time: 4ms
+Number of Access: 2000 Elapsed time: 13ms
+
+* pow(N, 1.5)
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+exponent = 1.5
+space usage = 637931290
+threshold = 29
+FINISH MATERIALIZATION
+START TEST
+START TEST
+Number of Access: 1000 Elapsed time: 4ms
+Number of Access: 2000 Elapsed time: 13ms

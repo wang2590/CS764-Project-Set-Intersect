@@ -2,8 +2,8 @@ N=5000
 
 Intersection
 * Postgres:
-access= 1000 , time= 
-access= 2000 , time= 
+access= 1000 , time= 5573416.460
+access= 2000 , time= 12087387.932
 
 * pow(N, 1.0)
 avg: 2488 max: 4999 min: 0

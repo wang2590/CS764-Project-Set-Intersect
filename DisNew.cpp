@@ -15,12 +15,9 @@
 #include <chrono>
 #include <random>
 #include <fstream>
-#include "./sparsepp/spp.h"
-
-using spp::sparse_hash_map;
 using namespace std;
 
-sparse_hash_map<uint64_t, unordered_set<uint64_t>> records; // database
+unordered_map<uint64_t, unordered_set<uint64_t>> records; // database
 // std::unordered_map<int, std::unordered_map<int, int>> M;    // HM
 
 const uint64_t NN = 50000;
@@ -28,7 +25,7 @@ uint64_t S = 0; // storage
 uint64_t N = 0; // database size
 
 // bool M[NN][NN];
-sparse_hash_map<uint64_t, sparse_hash_map<uint64_t, bool>> M; // HM
+unordered_map<uint64_t, unordered_map<uint64_t, bool>> M; // HM
 unordered_map<uint64_t, bool> MM;
 
 void testdata_map()
@@ -180,7 +177,7 @@ int main(int argc, char *argv[])
   // }
 
   // preprocessing phase
-  // HM();
+  HM();
   std::cout << "FINISH MATERIALIZATION" << std::endl;
 
   // for (auto & [i, value]: M) {

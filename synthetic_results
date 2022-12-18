@@ -2,7 +2,8 @@ N=5000
 
 Intersection
 * Postgres:
-
+access= 1000 , time= 
+access= 2000 , time= 
 
 * pow(N, 1.0)
 avg: 2488 max: 4999 min: 0
@@ -67,6 +68,8 @@ Number of Access: 2000 Elapsed time: 6901ms
 
 Set Disjoint
 * Postgres
+access= 1000 , time= 6353248.203
+access= 2000 , time= 11892471.405
 
 * pow(N, 1.0)
 avg: 2488 max: 4999 min: 0

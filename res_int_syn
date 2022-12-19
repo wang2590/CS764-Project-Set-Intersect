@@ -1,0 +1,30 @@
+number of sets : 1000
+database size = 499495
+space usage = 1
+threshold = 0
+START TEST
+Number of Access: 2000 Elapsed time: 795ms
+number of sets : 1000
+database size = 499495
+space usage = 706
+threshold = 0
+START TEST
+Number of Access: 2000 Elapsed time: 795ms
+number of sets : 1000
+database size = 499495
+space usage = 499495
+threshold = 1
+START TEST
+Number of Access: 2000 Elapsed time: 796ms
+number of sets : 1000
+database size = 499495
+space usage = 353017892
+threshold = 706
+START TEST
+Number of Access: 2000 Elapsed time: 396ms
+number of sets : 1000
+database size = 499495
+space usage = 249495255025
+threshold = 499495
+START TEST
+Number of Access: 2000 Elapsed time: 182ms

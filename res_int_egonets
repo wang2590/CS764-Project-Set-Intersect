@@ -1,0 +1,35 @@
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 1
+threshold = 0
+START TEST
+Number of Access: 10000 Elapsed time: 72671ms
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 860
+threshold = 0
+START TEST
+Number of Access: 10000 Elapsed time: 72534ms
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 741053
+threshold = 1
+START TEST
+Number of Access: 10000 Elapsed time: 72645ms
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 637931290
+threshold = 860
+START TEST
+Number of Access: 10000 Elapsed time: 12ms
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 549159548809
+threshold = 741053
+START TEST
+Number of Access: 10000 Elapsed time: 12ms

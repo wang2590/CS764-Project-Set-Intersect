@@ -1,0 +1,37 @@
+number of sets : 20000
+database size = 200748629
+exponent = 0
+space usage = 1
+threshold = 2.00749e+08
+FINISH MATERIALIZATION
+START TEST
+START ACCESS
+# of Access: 100000 -- time: 645ms
+exponent = 0.5
+space usage = 14168
+threshold = 1.68655e+06
+FINISH MATERIALIZATION
+START TEST
+START ACCESS
+# of Access: 100000 -- time: 146ms
+exponent = 1
+space usage = 200748629
+threshold = 14168
+FINISH MATERIALIZATION
+START TEST
+START ACCESS
+# of Access: 100000 -- time: 142ms
+exponent = 1.5
+space usage = 2844322795815
+threshold = 119
+FINISH MATERIALIZATION
+START TEST
+START ACCESS
+# of Access: 100000 -- time: 71ms
+exponent = 2
+space usage = 40300012045379640
+threshold = 1
+FINISH MATERIALIZATION
+START TEST
+START ACCESS
+# of Access: 100000 -- time: 69ms

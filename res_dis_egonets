@@ -7,16 +7,12 @@ threshold = 741053
 FINISH MATERIALIZATION
 START TEST
 START ACCESS
-# of Access: 50 -- time: 0ms
-START ACCESS
 # of Access: 20000 -- time: 107ms
 exponent = 0.5
 space usage = 860
 threshold = 25269
 FINISH MATERIALIZATION
 START TEST
-START ACCESS
-# of Access: 50 -- time: 0ms
 START ACCESS
 # of Access: 20000 -- time: 98ms
 exponent = 1
@@ -25,8 +21,6 @@ threshold = 860
 FINISH MATERIALIZATION
 START TEST
 START ACCESS
-# of Access: 50 -- time: 0ms
-START ACCESS
 # of Access: 20000 -- time: 103ms
 exponent = 1.5
 space usage = 637931290
@@ -34,15 +28,11 @@ threshold = 29
 FINISH MATERIALIZATION
 START TEST
 START ACCESS
-# of Access: 50 -- time: 0ms
-START ACCESS
 # of Access: 20000 -- time: 78ms
 exponent = 2
 space usage = 549159548809
 threshold = 1
 FINISH MATERIALIZATION
 START TEST
-START ACCESS
-# of Access: 50 -- time: 0ms
 START ACCESS
 # of Access: 20000 -- time: 16ms

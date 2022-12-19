@@ -1,28 +1,30 @@
-avg: 27 max: 276 min: 0
-number of sets : 27421
-database size = 741053
+number of sets : 1000
+database size = 499495
 space usage = 1
 threshold = 0
 START TEST
-Number of Access: 50 Elapsed time: 360ms
-Number of Access: 20000 Elapsed time: 144426ms
-space usage = 860
+Number of Access: 2000 Elapsed time: 795ms
+number of sets : 1000
+database size = 499495
+space usage = 706
 threshold = 0
 START TEST
-Number of Access: 50 Elapsed time: 145147ms
-Number of Access: 20000 Elapsed time: 433199ms
-space usage = 741053
+Number of Access: 2000 Elapsed time: 795ms
+number of sets : 1000
+database size = 499495
+space usage = 499495
 threshold = 1
 START TEST
-Number of Access: 50 Elapsed time: 434280ms
-Number of Access: 20000 Elapsed time: 866520ms
-space usage = 637931290
-threshold = 860
+Number of Access: 2000 Elapsed time: 796ms
+number of sets : 1000
+database size = 499495
+space usage = 353017892
+threshold = 706
 START TEST
-Number of Access: 50 Elapsed time: 867606ms
-Number of Access: 20000 Elapsed time: 1301204ms
-space usage = 549159548809
-threshold = 741053
+Number of Access: 2000 Elapsed time: 396ms
+number of sets : 1000
+database size = 499495
+space usage = 249495255025
+threshold = 499495
 START TEST
-Number of Access: 50 Elapsed time: 1302287ms
-Number of Access: 20000 Elapsed time: 1735889ms
+Number of Access: 2000 Elapsed time: 182ms

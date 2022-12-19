@@ -1,0 +1,28 @@
+avg: 27 max: 276 min: 0
+number of sets : 27421
+database size = 741053
+space usage = 1
+threshold = 0
+START TEST
+Number of Access: 50 Elapsed time: 362ms
+Number of Access: 20000 Elapsed time: 144727ms
+space usage = 860
+threshold = 0
+START TEST
+Number of Access: 50 Elapsed time: 145448ms
+Number of Access: 20000 Elapsed time: 433900ms
+space usage = 741053
+threshold = 1
+START TEST
+Number of Access: 50 Elapsed time: 434982ms
+Number of Access: 20000 Elapsed time: 867516ms
+space usage = 637931290
+threshold = 860
+START TEST
+Number of Access: 50 Elapsed time: 868599ms
+Number of Access: 20000 Elapsed time: 1302259ms
+space usage = 549159548809
+threshold = 741053
+START TEST
+Number of Access: 50 Elapsed time: 1303340ms
+Number of Access: 20000 Elapsed time: 1736623ms
